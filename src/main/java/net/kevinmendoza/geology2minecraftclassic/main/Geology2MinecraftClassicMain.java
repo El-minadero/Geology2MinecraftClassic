@@ -1,4 +1,4 @@
-package net.kevinmendoza.geology2minecraftclassicmain;
+package net.kevinmendoza.geology2minecraftclassic.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +37,7 @@ public class Geology2MinecraftClassicMain implements IGeoWorldRockTransformer {
 	public static final String NAME = "Geology 2 Minecraft Classic";
 	public static final String VERSION = "1.0.1a";
 	public static Geology2MinecraftClassicMain PluginMain;
+	private ConverterMap map;
 	private GlobalDefaults defaults;
 	@Inject
 	private Logger logger; 
@@ -49,6 +50,7 @@ public class Geology2MinecraftClassicMain implements IGeoWorldRockTransformer {
 	
 	public Geology2MinecraftClassicMain() {
 		PluginMain = this;
+		map = new ConverterMap();
 	}
 	@Listener
 	public void onGamePreInitialization(GamePreInitializationEvent event) throws IOException, ObjectMappingException {
@@ -79,8 +81,7 @@ public class Geology2MinecraftClassicMain implements IGeoWorldRockTransformer {
 	
 	@Override
 	public IBlockStateCreator getBlockCreator(long seed, boolean newInstance) {
-		// TODO Auto-generated method stub
-		return null;
+		return map.getCreator(seed, newInstance);
 	}
 	
 }
