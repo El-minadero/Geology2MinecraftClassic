@@ -7,7 +7,7 @@ import net.kevinmendoza.geoworldlibrary.geology.rockdata.IRetrieveData;
 interface IBlockBase {
 
 	BlockState getBlockState(IRetrieveData retrievalData);
-
-	BlockState getBlockState(IRetrieveData retrievalData, BlockStateNode blockStateNode);
+	
+	void setSeed(long seed);
 
 }

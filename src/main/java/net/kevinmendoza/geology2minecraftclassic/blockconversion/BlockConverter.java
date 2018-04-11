@@ -13,7 +13,7 @@ import net.kevinmendoza.geoworldlibrary.geology.rockdata.IRetrieveData;
 import net.kevinmendoza.geoworldlibrary.utilities.IBlockStateCreator;
 class BlockConverter implements IBlockStateCreator {
 	 
-	private HashMap<BulkComposition,CompositionGraph> blockMap;
+	private HashMap<BulkComposition,CompositionTree> blockMap;
 
 	@Override
 	public BlockState getBlockState(IData data) {
