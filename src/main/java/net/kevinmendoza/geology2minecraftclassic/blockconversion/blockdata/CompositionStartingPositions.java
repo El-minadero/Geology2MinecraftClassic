@@ -1,13 +1,14 @@
-package net.kevinmendoza.geology2minecraftclassic.blockconversion;
+package net.kevinmendoza.geology2minecraftclassic.blockconversion.blockdata;
 
 import java.util.List;
 
 import org.spongepowered.api.block.BlockState;
 
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.IBlockBase;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.IRetrieveData;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.Texture;
 
-class CompositionTree {
+class CompositionStartingPositions {
 	
 	private IBlockBase startingAmorphous;
 	private IBlockBase startingFine;
@@ -15,7 +16,7 @@ class CompositionTree {
 	private IBlockBase startingCoarse;
 	
 	
-	private CompositionTree(Builder builder) {
+	private CompositionStartingPositions(Builder builder) {
 		startingAmorphous	= builder.getAmorphous();
 		startingFine		= builder.getFine();
 		startingMedium		= builder.getMedium();
@@ -62,8 +63,8 @@ class CompositionTree {
 			this.startingCoarse=base; return this;
 		}
 		
-		public CompositionTree Build() {
-			return new CompositionTree(this);
+		public CompositionStartingPositions Build() {
+			return new CompositionStartingPositions(this);
 		}
 		
 	}

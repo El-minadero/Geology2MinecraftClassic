@@ -1,4 +1,4 @@
-package net.kevinmendoza.geology2minecraftclassic.blockconversion;
+package net.kevinmendoza.geology2minecraftclassic.blockconversion.blockdata;
 
 import java.util.HashMap;
 
@@ -13,7 +13,12 @@ import net.kevinmendoza.geoworldlibrary.geology.rockdata.IRetrieveData;
 import net.kevinmendoza.geoworldlibrary.utilities.IBlockStateCreator;
 class BlockConverter implements IBlockStateCreator {
 	 
-	private HashMap<BulkComposition,CompositionTree> blockMap;
+	private HashMap<BulkComposition,CompositionStartingPositions> blockMap;
+
+	public BlockConverter(HashMap<BulkComposition, 
+			CompositionStartingPositions> finalBlockMap) {
+		this.blockMap = finalBlockMap;
+	}
 
 	@Override
 	public BlockState getBlockState(IData data) {

@@ -1,4 +1,4 @@
-package net.kevinmendoza.geology2minecraftclassic.blockconversion;
+package net.kevinmendoza.geology2minecraftclassic.blockconversion.metamorphic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,14 +8,16 @@ import java.util.Random;
 
 import org.spongepowered.api.block.BlockState;
 
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.IBlockBase;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.ActivityModifiers;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.IRetrieveData;
 
-class MetamorphicControl {
+class MetamorphicControl implements IMetaControl {
 
 	private double[] beginMetamorphosism;
 	private double[] endMetamorphosism;
 	private List<IBlockBase> conversionTargets;
+	private List<String> conversionTargetIDs;
 	private Random random;
 	private final List<ActivityModifiers> metamorphicControls = 
 			Collections.unmodifiableList(
@@ -24,13 +26,20 @@ class MetamorphicControl {
 	private MetamorphicControl(Builder builder) {
 		beginMetamorphosism=builder.getBeginningLevel();
 		endMetamorphosism=builder.getEndLevel();
-		conversionTargets=builder.getConversionTargets();
+		conversionTargetIDs=builder.getConversionTargets();
 		random = new Random();
 	}
 	
-	void setSeed(long seed) {
+	public void setTargets(List<IBlockBase> blockList) {
+		conversionTargets = blockList;
+	}
+
+	public List<String> getTargets() { return conversionTargetIDs; }
+	
+	public void setSeed(long seed) {
 		random = new Random(seed);
 	}
+	
 	public boolean shouldConvert(IRetrieveData retrievalData) {
 		if(conversionTargets.size()==0)
 			return false;
@@ -76,7 +85,7 @@ class MetamorphicControl {
 
 		private double[] beginningLevels;
 		private double[] endingLevels;
-		List<IBlockBase> conversionTargets=new ArrayList<>();
+		List<String> conversionTargets=new ArrayList<>();
 		
 		public Builder setBeginningLevels(double[] levels) {
 			this.beginningLevels=levels; return this;
@@ -84,12 +93,12 @@ class MetamorphicControl {
 		public Builder setEndingLevels(double[] levels) {
 			this.endingLevels=levels; return this;
 		}
-		public Builder setConversionTargetsLevels(List<IBlockBase> base) {
+		public Builder setConversionTargets(List<String> base) {
 			this.conversionTargets=base; return this;
 		}
 		
 		public double[] getBeginningLevel() {return beginningLevels; }
-		public List<IBlockBase> getConversionTargets() { return conversionTargets;}
+		public List<String> getConversionTargets() { return conversionTargets;}
 		public double[] getEndLevel() { return endingLevels; }
 		
 		public MetamorphicControl Build() {
