@@ -5,6 +5,8 @@ import org.spongepowered.api.block.BlockState;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.IRetrieveData;
 
 class OreControl implements IOreControl {
+	
+	
 
 	public boolean isOre(IRetrieveData retrievalData) {
 		// TODO Auto-generated method stub

@@ -7,13 +7,9 @@ import org.spongepowered.api.block.BlockState;
 import org.spongepowered.api.block.BlockType;
 import org.spongepowered.api.data.key.Keys;
 import org.spongepowered.api.data.manipulator.immutable.block.ImmutableDirtData;
-import org.spongepowered.api.data.manipulator.immutable.block.ImmutableStoneData;
 import org.spongepowered.api.data.manipulator.mutable.block.DirtData;
-import org.spongepowered.api.data.manipulator.mutable.block.StoneData;
 import org.spongepowered.api.data.type.DirtType;
 import org.spongepowered.api.data.type.DirtTypes;
-import org.spongepowered.api.data.type.StoneType;
-import org.spongepowered.api.data.type.StoneTypes;
 
 class DataModifiersDirt {
 

@@ -19,7 +19,7 @@ public class GlobalDefaults implements IGlobalDefaults {
 	private List<BlockStateDefault> blockStateList;
 	
 	public GlobalDefaults() {
-		blockStateList = buildDefaultList();
+		blockStateList =new BlockConfigFactory().getRocks();
 	}
 
 	@Override
@@ -31,45 +31,5 @@ public class GlobalDefaults implements IGlobalDefaults {
 		return interfaceList;
 	}
 	
-	private List<BlockStateDefault> buildDefaultList() {
-		List<BlockStateDefault> blockStateDefaults = new ArrayList<>();
-		blockStateDefaults.addAll(buildMaficRocks());
-		blockStateDefaults.addAll(buildFelsicRocks());
-		blockStateDefaults.addAll(buildSilicateRocks());
-		blockStateDefaults.addAll(buildCarbonateRocks());
-		blockStateDefaults.addAll(buildClayRocks());
-		return blockStateDefaults;
-	}
-
-	private List<BlockStateDefault> buildMaficRocks() {
-		/*
-		 * Lets try building 
-		 * basalt. andesite, kimberlite
-		 */
-		List<BlockStateDefault> blockStateDefaults = new ArrayList<>();
-		blockStateDefaults.add(new BlockStateDefault(
-				new BlockStateAccessDefaults.Builder().build(), 
-				new OreControlDefaults.Builder().build(), 
-				new MetamorphicControlDefaults.Builder().build(), 
-				new MetaDataDefaults.Builder().build()));
-		return null;
-	}
 	
-	private List<BlockStateDefault> buildFelsicRocks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	private List<BlockStateDefault> buildSilicateRocks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	private List<BlockStateDefault> buildCarbonateRocks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	private List<BlockStateDefault> buildClayRocks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

@@ -50,7 +50,7 @@ class BlockConfigFactory {
 
 		return blockStateDefaults;
 	}
-	
+
 	private List<BlockStateDefault> buildFelsicRocks() {
 		// granite
 		List<BlockStateDefault> blockStateDefaults = new ArrayList<>();
@@ -95,14 +95,14 @@ class BlockConfigFactory {
 				new OreControlDefaults.Builder().build(), 
 				new MetamorphicControlDefaults.Builder().build(), 
 				new MetaDataDefaults.Builder().build()));
-		
+
 		// quartzite
 		blockStateDefaults.add(new BlockStateDefault(
 				new BlockStateAccessDefaults.Builder().build(), 
 				new OreControlDefaults.Builder().build(), 
 				new MetamorphicControlDefaults.Builder().build(), 
 				new MetaDataDefaults.Builder().build()));
-		
+
 		// conglomerate
 		blockStateDefaults.add(new BlockStateDefault(
 				new BlockStateAccessDefaults.Builder().build(), 
@@ -112,11 +112,51 @@ class BlockConfigFactory {
 		return blockStateDefaults;
 	}
 	private List<BlockStateDefault> buildCarbonateRocks() {
-		// TODO Auto-generated method stub
-		return null;
+		// limestone
+		List<BlockStateDefault> blockStateDefaults = new ArrayList<>();
+		blockStateDefaults.add(new BlockStateDefault(
+				new BlockStateAccessDefaults.Builder().build(), 
+				new OreControlDefaults.Builder().build(), 
+				new MetamorphicControlDefaults.Builder().build(), 
+				new MetaDataDefaults.Builder().build()));
+
+		// marble
+		blockStateDefaults.add(new BlockStateDefault(
+				new BlockStateAccessDefaults.Builder().build(), 
+				new OreControlDefaults.Builder().build(), 
+				new MetamorphicControlDefaults.Builder().build(), 
+				new MetaDataDefaults.Builder().build()));
+
+		// carbonatite
+		blockStateDefaults.add(new BlockStateDefault(
+				new BlockStateAccessDefaults.Builder().build(), 
+				new OreControlDefaults.Builder().build(), 
+				new MetamorphicControlDefaults.Builder().build(), 
+				new MetaDataDefaults.Builder().build()));
+		return blockStateDefaults;
 	}
 	private List<BlockStateDefault> buildClayRocks() {
-		// TODO Auto-generated method stub
-		return null;
+		// mudstone
+		List<BlockStateDefault> blockStateDefaults = new ArrayList<>();
+		blockStateDefaults.add(new BlockStateDefault(
+				new BlockStateAccessDefaults.Builder().build(), 
+				new OreControlDefaults.Builder().build(), 
+				new MetamorphicControlDefaults.Builder().build(), 
+				new MetaDataDefaults.Builder().build()));
+
+		// shale
+		blockStateDefaults.add(new BlockStateDefault(
+				new BlockStateAccessDefaults.Builder().build(), 
+				new OreControlDefaults.Builder().build(), 
+				new MetamorphicControlDefaults.Builder().build(), 
+				new MetaDataDefaults.Builder().build()));
+
+		// slate
+		blockStateDefaults.add(new BlockStateDefault(
+				new BlockStateAccessDefaults.Builder().build(), 
+				new OreControlDefaults.Builder().build(), 
+				new MetamorphicControlDefaults.Builder().build(), 
+				new MetaDataDefaults.Builder().build()));
+		return blockStateDefaults;
 	}
 }
