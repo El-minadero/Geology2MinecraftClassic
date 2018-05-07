@@ -7,7 +7,7 @@ import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
 public class BlockStateDefault implements IBlockStateDefaults {
 	
 	@Setting
-	private BlockMetadata metaData;
+	private MetaDataDefaults metaData;
 	@Setting
 	private BlockStateAccessDefaults blockStateAccessDefaults;
 	@Setting
@@ -16,7 +16,7 @@ public class BlockStateDefault implements IBlockStateDefaults {
 	private MetamorphicControlDefaults metamorphicControlDefaults;
 	
 	public BlockStateDefault(BlockStateAccessDefaults stateAccess, OreControlDefaults oreControl,
-							MetamorphicControlDefaults metaControl, BlockMetadata metadata) {
+							MetamorphicControlDefaults metaControl, MetaDataDefaults metadata) {
 		blockStateAccessDefaults=stateAccess;
 		oreControlDefaults=oreControl;
 		metamorphicControlDefaults=metaControl;

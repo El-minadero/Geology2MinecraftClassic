@@ -21,5 +21,12 @@ public class MetamorphicControlDefaults implements IMetaControlDefaults {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	static class Builder {
+
+		MetamorphicControlDefaults build() {
+			return null;
+		}
+	}
 
 }

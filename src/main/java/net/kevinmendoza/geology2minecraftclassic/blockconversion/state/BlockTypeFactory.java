@@ -11,15 +11,23 @@ class BlockTypeFactory {
 	
 	BlockTypeFactory() {
 		blockMap = new HashMap<>();
-		blockMap.put("STONE", BlockTypes.STONE);
-		blockMap.put("GRAVEL",  BlockTypes.GRAVEL);
-		blockMap.put("SAND",  BlockTypes.SAND);
-		blockMap.put("DIRT",  BlockTypes.DIRT);
-		blockMap.put("SANDSTONE",  BlockTypes.SANDSTONE);
-		blockMap.put("RED_SANDSTONE",  BlockTypes.RED_SANDSTONE);
-		blockMap.put("CLAY",  BlockTypes.CLAY);
-		blockMap.put("HARDENED_CLAY",  BlockTypes.HARDENED_CLAY);
-		blockMap.put("STAINED_HARDENED_CLAY", BlockTypes.STAINED_HARDENED_CLAY);
+		populateMap();
+	}
 	
+	private void populateMap() {
+		blockMap.put("STONE", 	BlockTypes.STONE);
+		blockMap.put("GRAVEL", 	BlockTypes.GRAVEL);
+		blockMap.put("SAND",  	BlockTypes.SAND);
+		blockMap.put("DIRT",  	BlockTypes.DIRT);
+		blockMap.put("SANDSTONE",  		BlockTypes.SANDSTONE);
+		blockMap.put("CLAY",  			BlockTypes.CLAY);
+		blockMap.put("LITHIFIED_CLAY",  	BlockTypes.STAINED_HARDENED_CLAY);
+	}
+
+	public BlockType getType(String type) {
+		if(blockMap.containsKey(type)) {
+			return blockMap.get(type);
+		}
+		return blockMap.get("STONE");
 	}
 }

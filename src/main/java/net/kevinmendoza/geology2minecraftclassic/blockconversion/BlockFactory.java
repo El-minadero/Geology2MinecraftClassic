@@ -7,22 +7,22 @@ import net.kevinmendoza.geology2minecraftclassic.blockconversion.metamorphic.IMe
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.metamorphic.MetamorphicControlFactory;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.ore.IOreControl;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.ore.OreControlFactory;
-import net.kevinmendoza.geology2minecraftclassic.blockconversion.state.BlockStateFactory;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.state.IBlockStateAccess;
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.state.StateAccessFactory;
 import net.kevinmendoza.geology2minecraftclassic.configuration.IBlockStateDefaults;
 
-public class SingleStateFactory implements IStateFactory {
+public class BlockFactory implements IStateFactory {
 	
 	private OreControlFactory oreFactory;
 	private MetamorphicControlFactory metaFactory;
-	private BlockStateFactory blockStateFactory;
+	private StateAccessFactory stateAccessFactory;
 	private MetadataFactory metadataFactory;
 	
 	
-	public SingleStateFactory(){
+	public BlockFactory(){
 		oreFactory 	= new OreControlFactory();
 		metaFactory = new MetamorphicControlFactory();
-		blockStateFactory = new BlockStateFactory();
+		stateAccessFactory = new StateAccessFactory();
 		metadataFactory = new MetadataFactory();
 	}
 	
@@ -30,7 +30,7 @@ public class SingleStateFactory implements IStateFactory {
 	public IBlockBase createState(IBlockStateDefaults defaults) {
 		IMetaControl metaControl 	= metaFactory.createMetamorphicControl(defaults);
 		IOreControl  oreControl		= oreFactory.createOreControl(defaults);
-		IBlockStateAccess blockStateAccess = blockStateFactory.createBlockStateAccess(defaults);
+		IBlockStateAccess blockStateAccess = stateAccessFactory.createBlockStateAccess(defaults);
 		IBlockMetadata metadata		= metadataFactory.getMetadata();
 		
 		return new BaseBlockState.Builder()

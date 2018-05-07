@@ -42,7 +42,16 @@ public class GlobalDefaults implements IGlobalDefaults {
 	}
 
 	private List<BlockStateDefault> buildMaficRocks() {
-		// TODO Auto-generated method stub
+		/*
+		 * Lets try building 
+		 * basalt. andesite, kimberlite
+		 */
+		List<BlockStateDefault> blockStateDefaults = new ArrayList<>();
+		blockStateDefaults.add(new BlockStateDefault(
+				new BlockStateAccessDefaults.Builder().build(), 
+				new OreControlDefaults.Builder().build(), 
+				new MetamorphicControlDefaults.Builder().build(), 
+				new MetaDataDefaults.Builder().build()));
 		return null;
 	}
 	

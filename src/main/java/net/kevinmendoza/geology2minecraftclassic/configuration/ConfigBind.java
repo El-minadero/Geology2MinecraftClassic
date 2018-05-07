@@ -6,7 +6,7 @@ public class ConfigBind extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		
+		bind(IGlobalDefaults.class).to(GlobalDefaults.class);
 	}
 
 }

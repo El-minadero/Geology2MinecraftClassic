@@ -7,7 +7,7 @@ import java.util.List;
 import com.google.inject.Inject;
 
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.IBlockBase;
-import net.kevinmendoza.geology2minecraftclassic.blockconversion.SingleStateFactory;
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.BlockFactory;
 import net.kevinmendoza.geology2minecraftclassic.configuration.IBlockStateDefaults;
 import net.kevinmendoza.geology2minecraftclassic.configuration.IGlobalDefaults;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.BulkComposition;
@@ -17,10 +17,10 @@ public class CompositionMapFactory {
 	@Inject
 	IGlobalDefaults globalDefaults; 
 
-	private SingleStateFactory stateFactory;
+	private BlockFactory stateFactory;
 	
 	public CompositionMapFactory() {
-		stateFactory = new SingleStateFactory();
+		stateFactory = new BlockFactory();
 	}
 	
 	public BlockConverter createConverter() {

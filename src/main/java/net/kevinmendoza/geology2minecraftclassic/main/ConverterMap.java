@@ -11,12 +11,12 @@ import net.kevinmendoza.geoworldlibrary.utilities.IBlockStateCreator;
 class ConverterMap {
 	
 	private ConverterFactory factory;
-	private HashMap<Long,IBlockStateCreator> stratigrapyMap;
+	private HashMap<Long,IBlockStateCreator> creatorMap;
 	
 	public ConverterMap() {
 		Injector injector = Guice.createInjector(new ConfigBind());
 		factory = injector.getInstance(ConverterFactory.class);
-		stratigrapyMap=new HashMap<>();
+		creatorMap=new HashMap<>();
 	}
 
 	public IBlockStateCreator getCreator(long seed,boolean newInstance) {
@@ -30,8 +30,8 @@ class ConverterMap {
 
 
 	private  IBlockStateCreator returnMapValue(long seed) {
-		if(stratigrapyMap.containsKey(seed)) {
-			return stratigrapyMap.get(seed);
+		if(creatorMap.containsKey(seed)) {
+			return creatorMap.get(seed);
 		}
 		else {
 			return createNewInstance(seed);
@@ -40,7 +40,7 @@ class ConverterMap {
 
 	private  IBlockStateCreator createNewInstance(long seed) {
 		IBlockStateCreator geology = factory.createBlockStateCreator(seed);
-		stratigrapyMap.put(seed, geology);
+		creatorMap.put(seed, geology);
 		return geology;
 	}
 
