@@ -3,6 +3,8 @@ package net.kevinmendoza.geology2minecraftclassic.blockconversion;
 import com.google.inject.Inject;
 
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.blockdata.BaseBlockState;
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.metadata.IBlockMetadata;
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.metadata.MetadataFactory;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.metamorphic.IMetaControl;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.metamorphic.MetamorphicControlFactory;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.ore.IOreControl;
@@ -31,7 +33,7 @@ public class BlockFactory implements IStateFactory {
 		IMetaControl metaControl 	= metaFactory.createMetamorphicControl(defaults);
 		IOreControl  oreControl		= oreFactory.createOreControl(defaults);
 		IBlockStateAccess blockStateAccess = stateAccessFactory.createBlockStateAccess(defaults);
-		IBlockMetadata metadata		= metadataFactory.getMetadata();
+		IBlockMetadata metadata		= metadataFactory.getMetadata(defaults);
 		
 		return new BaseBlockState.Builder()
 				.setMetaControl(metaControl)

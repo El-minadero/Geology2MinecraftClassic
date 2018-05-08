@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.spongepowered.api.block.BlockState;
 
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.metadata.IBlockMetadata;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.BulkComposition;
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.IRetrieveData;
 

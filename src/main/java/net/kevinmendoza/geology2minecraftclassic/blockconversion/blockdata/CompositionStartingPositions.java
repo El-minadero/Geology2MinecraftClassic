@@ -18,7 +18,7 @@ class CompositionStartingPositions {
 	
 	private CompositionStartingPositions(Builder builder) {
 		startingAmorphous	= builder.getAmorphous();
-		startingFine		= builder.getFine();
+		startingFine		    = builder.getFine();
 		startingMedium		= builder.getMedium();
 		startingCoarse		= builder.getCoarse();
 	}
@@ -51,17 +51,34 @@ class CompositionStartingPositions {
 		public IBlockBase getFine() 	{ return startingFine; }
 		
 		public Builder setAmorphous(IBlockBase base) {
-			this.startingAmorphous=base; return this;
+			if(base!=null)
+				this.startingAmorphous=base; 
+			return this;
 		}
 		public Builder setFine(IBlockBase base) {
-			this.startingFine=base; return this;
+			if(base!=null)
+				this.startingFine=base; 
+			return this;
 		}
 		public Builder setMedium(IBlockBase base) {
-			this.startingMedium=base; return this;
+			if(base!=null)
+				this.startingMedium=base; 
+			return this;
 		}
 		public Builder setCoarse(IBlockBase base) {
-			this.startingCoarse=base; return this;
+			if(base!=null)
+				this.startingCoarse=base; 
+			return this;
 		}
+		
+		public Builder setDefault(IBlockBase defaultBlock) {
+			if(startingAmorphous==null) 	{ startingAmorphous	=defaultBlock;}
+			if(startingFine==null) 		{ startingFine		=defaultBlock;}
+			if(startingMedium==null) 	{ startingMedium		=defaultBlock;}
+			if(startingCoarse==null) 	{ startingCoarse		=defaultBlock;}
+			return this;
+		}
+		
 		
 		public CompositionStartingPositions Build() {
 			return new CompositionStartingPositions(this);

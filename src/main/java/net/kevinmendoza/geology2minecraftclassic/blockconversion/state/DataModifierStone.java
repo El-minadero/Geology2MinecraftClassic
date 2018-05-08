@@ -39,7 +39,6 @@ class DataModifierStone {
 	
 	BlockState modifyStoneState(BlockType type, String variant) {
 		BlockState stone = type.getDefaultState();
-		Immu
 		Optional<ImmutableStoneData> stoneStateData =stone.get(ImmutableStoneData.class);
 		StoneData granite = stoneStateData.get().asMutable().set(Keys.STONE_TYPE,getStoneType(variant));
 		return stone.copy().with(granite.asImmutable()).get();

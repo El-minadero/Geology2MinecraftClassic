@@ -1,9 +1,8 @@
-package net.kevinmendoza.geology2minecraftclassic.blockconversion;
+package net.kevinmendoza.geology2minecraftclassic.blockconversion.metadata;
 
 import net.kevinmendoza.geoworldlibrary.geology.rockdata.BulkComposition;
 
 public interface IBlockMetadata {
-	IBlockMetadata getMetadata();
 	
 	String getName();
 

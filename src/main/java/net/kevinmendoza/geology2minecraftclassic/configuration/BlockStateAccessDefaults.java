@@ -40,6 +40,16 @@ public class BlockStateAccessDefaults implements IBlockStateAccessDefaults {
 		public List<String> getVariants() { return variants; }
 		public double[] getProbabilities() { return probabilities; }
 		
+		Builder setProbabilities(double[] probs) {
+			this.probabilities = probs; return this;
+		}
+		Builder setVariants(List<String> variants) {
+			this.variants = variants; return this;
+		}
+		Builder setTypes(List<String> types) {
+			this.types=types; return this; 
+		}
+		
 		BlockStateAccessDefaults build() {
 			return new BlockStateAccessDefaults(this);
 		}

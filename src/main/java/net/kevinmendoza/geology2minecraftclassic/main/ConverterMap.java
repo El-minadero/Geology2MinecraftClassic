@@ -5,23 +5,24 @@ import java.util.HashMap;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.blockdata.CompositionMapFactory;
 import net.kevinmendoza.geology2minecraftclassic.configuration.ConfigBind;
 import net.kevinmendoza.geoworldlibrary.utilities.IBlockStateCreator;
 
 class ConverterMap {
 	
-	private ConverterFactory factory;
+	private CompositionMapFactory factory;
 	private HashMap<Long,IBlockStateCreator> creatorMap;
 	
 	public ConverterMap() {
 		Injector injector = Guice.createInjector(new ConfigBind());
-		factory = injector.getInstance(ConverterFactory.class);
+		factory = injector.getInstance(CompositionMapFactory.class);
 		creatorMap=new HashMap<>();
 	}
 
 	public IBlockStateCreator getCreator(long seed,boolean newInstance) {
 		if(newInstance) {
-			return factory.createBlockStateCreator(seed);
+			return factory.createConverter();
 		}
 		else {
 			return returnMapValue(seed);
@@ -39,7 +40,7 @@ class ConverterMap {
 	}
 
 	private  IBlockStateCreator createNewInstance(long seed) {
-		IBlockStateCreator geology = factory.createBlockStateCreator(seed);
+		IBlockStateCreator geology = factory.createConverter();
 		creatorMap.put(seed, geology);
 		return geology;
 	}

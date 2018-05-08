@@ -21,6 +21,8 @@ class BlockTypeFactory {
 		blockMap.put("DIRT",  	BlockTypes.DIRT);
 		blockMap.put("SANDSTONE",  		BlockTypes.SANDSTONE);
 		blockMap.put("CLAY",  			BlockTypes.CLAY);
+		blockMap.put("COBBLESTONE",  	BlockTypes.COBBLESTONE);
+		blockMap.put("OBSIDIAN",  		BlockTypes.OBSIDIAN);
 		blockMap.put("LITHIFIED_CLAY",  	BlockTypes.STAINED_HARDENED_CLAY);
 	}
 

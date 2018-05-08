@@ -5,7 +5,7 @@ import java.util.List;
 import org.spongepowered.api.block.BlockState;
 
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.IBlockBase;
-import net.kevinmendoza.geology2minecraftclassic.blockconversion.IBlockMetadata;
+import net.kevinmendoza.geology2minecraftclassic.blockconversion.metadata.IBlockMetadata;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.metamorphic.IMetaControl;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.ore.IOreControl;
 import net.kevinmendoza.geology2minecraftclassic.blockconversion.state.IBlockStateAccess;
